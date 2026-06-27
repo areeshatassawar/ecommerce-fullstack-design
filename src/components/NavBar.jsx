@@ -25,12 +25,12 @@ function NavBar() {
     <>
       <header className="w-full sticky top-0 z-50">
         <div className="bg-white border-b border-gray-300 shadow-sm">
-          <div className="max-w-5xl mx-auto px-4 py-2 flex items-center gap-10">
+          <div className="max-w-5xl mx-auto px-4 py-2 flex items-center gap-2 md:gap-10">
             <Link to="/" className="shrink-0">
-              <img src={object.chicbazaar} className="w-34 h-auto" />
+              <img src={object.chicbazaar} className="w-28 md:w-34 h-auto" />
             </Link>
 
-            <form onSubmit={handleSearch} className="flex flex-1 ml-2">
+            <form onSubmit={handleSearch} className="hidden md:flex flex-1 ml-2">
               <input
                 value={search}
                 onChange={e => setSearch(e.target.value)}
@@ -71,11 +71,27 @@ function NavBar() {
             </Link>
             </div>
 
-            <div className="flex md:hidden items-center gap-3 ml-auto">
-              <Link to="/cart" className="text-gray-600 text-xl"><img src={object.cart} /></Link>
-              <button onClick={() => setMenuOpen(!menuOpen)} className="text-gray-600 text-xl">☰</button>
+            <div className="flex md:hidden items-center gap-2 ml-auto">
+              <Link to="/cart" className="relative text-gray-600">
+                <img src={object.cart} className="w-6 h-6 object-contain" />
+                {cartItems.length > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-bold">
+                    {cartItems.reduce((sum, i) => sum + i.qty, 0)}
+                  </span>
+                )}
+              </Link>
+              <button onClick={() => setMenuOpen(!menuOpen)} className="text-gray-600 text-2xl leading-none p-1">☰</button>
             </div>
           </div>
+          <form onSubmit={handleSearch} className="flex md:hidden px-4 pb-2 gap-1">
+            <input
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+              type="text" placeholder="Search"
+              className="border border-gray-300 px-3 py-1.5 flex-1 rounded-l-sm focus:outline-none text-sm min-w-0"
+            />
+            <button type="submit" className="bg-blue-600 text-white px-4 py-1.5 rounded-r-sm hover:bg-blue-700 text-sm shrink-0">Search</button>
+          </form>
         </div>
 
         {menuOpen && (

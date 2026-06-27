@@ -113,7 +113,7 @@ function Admin() {
             </form>
 
             {loading ? <p className="text-center text-gray-500">Loading...</p> : (
-              <div className="bg-white rounded overflow-hidden">
+              <div className="bg-white rounded overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead className="bg-gray-50 text-left">
                     <tr><th className="px-4 py-2">Image</th><th className="px-4 py-2">Name</th><th className="px-4 py-2">Price</th><th className="px-4 py-2">Category</th><th className="px-4 py-2">Stock</th><th className="px-4 py-2">Actions</th></tr>
@@ -143,7 +143,7 @@ function Admin() {
           <>
             <h1 className="text-xl font-bold text-gray-800 mb-4">Order Management</h1>
             {loading ? <p className="text-center text-gray-500">Loading...</p> : (
-              <div className="bg-white rounded overflow-hidden">
+              <div className="bg-white rounded overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead className="bg-gray-50 text-left">
                     <tr><th className="px-4 py-2">Order ID</th><th className="px-4 py-2">Customer</th><th className="px-4 py-2">Items</th><th className="px-4 py-2">Total</th><th className="px-4 py-2">Date</th><th className="px-4 py-2">Status</th><th className="px-4 py-2">Action</th></tr>

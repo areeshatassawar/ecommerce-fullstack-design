@@ -124,7 +124,7 @@
 
   {/* Bottom bar */}
   <div className="border-t border-gray-300 py-4 px-4">
-    <div className="max-w-7xl mx-auto flex justify-between items-center text-xs text-gray-400">
+    <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-xs text-gray-400 gap-2">
       <span>© 2023 Ecommerce.</span>
       <div className="flex items-center gap-2">
         <span>🇺🇸</span>

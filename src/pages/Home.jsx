@@ -189,7 +189,7 @@ function Home() {
 
       <section className="max-w-7xl mx-auto px-4 py-4">
         <h3 className="font-semibold text-gray-800 mb-4">Our extra services</h3>
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             { title: 'Source from Industry Hubs', bgImage: object.image1 },
             { title: 'Customize Your Products', bgImage: object.customize },
@@ -208,7 +208,7 @@ function Home() {
       <section className="max-w-7xl mx-auto px-4 py-4">
         <div className="bg-white rounded p-6">
           <h3 className="font-semibold text-gray-800 mb-4">Suppliers by region</h3>
-          <div className="grid grid-cols-5 gap-3 text-sm">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 text-sm">
             {[['Arabic Emirates','🇦🇪','shopname.ae'],['Australia','🇦🇺','shopname.com.au'],['United States','🇺🇸','shopname.com'],['Russia','🇷🇺','shopname.ru'],['Italy','🇮🇹','shopname.it'],['Denmark','🇩🇰','denmark.com.dk'],['France','🇫🇷','shopname.com.fr'],['Arabic Emirates','🇦🇪','shopname.ae'],['China','🇨🇳','shopname.ae'],['Great Britain','🇬🇧','shopname.co.uk']].map(([country, flag, url], i) => (
               <div key={i} className="flex items-center gap-2 hover:text-blue-600 cursor-pointer">
                 <span className="text-xl">{flag}</span>
