@@ -18,7 +18,21 @@ app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/newsletter', newsletterRoutes);
 
-await connectDB();
-await connectCloudinary();
+let initialized = false;
+const initialize = async () => {
+  if (initialized) return;
+  await connectDB();
+  await connectCloudinary();
+  initialized = true;
+};
+
+app.use(async (req, res, next) => {
+  try {
+    await initialize();
+    next();
+  } catch (err) {
+    res.status(500).json({ error: 'Server initialization failed' });
+  }
+});
 
 export default app;
